@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table">
+<thead>
+  <tr>
+    <td> name </td>
+    <td> type </td>
+    <td> price </td>
+    <!-- <td> id </td> -->
+    <td></td>
+    <td></td>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of buketList">
+    <td> {{item.itemName}} </td>
+    <td> {{item.itemType}} </td>
+    <td> {{item.itemPrice}} </td>
+    <!-- <td> {{item._id}} </td> -->
+    <td> <button mat-raised-button (click)="editItem(item)" color="accent" >Edit </button> </td>
+    <td> <button mat-raised-button (click)="deletitem(item._id)" color="warn" >delete </button> </td>
+  </tr>
+</tbody>
+
+</table>
+</div>

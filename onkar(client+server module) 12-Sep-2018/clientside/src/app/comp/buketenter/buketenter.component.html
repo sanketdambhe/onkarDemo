@@ -1,0 +1,33 @@
+<br>
+<mat-card style="background-color: rgb(58, 58, 192)"> New Buket Item</mat-card>
+
+<div class="container">
+  <form (ngSubmit)="onSubmit(buketform)" #buketform="ngForm" >
+
+  <div fxLayout="column" class="wd100" fxLayoutAlign="space-around center">
+    <mat-form-field class="wd80">
+      <input matInput type="text"
+
+      ngModel name="itemName"
+      placeholder="Please Enter Item Name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select  ngModel name="itemType"  placeholder="selet item Type">
+        <mat-option *ngFor="let item of itemtype"  [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="wd80"  >
+      <input matInput type="number"
+      ngModel name="itemPrice"
+      placeholder="Please Enter Item Price">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+
+  </div>
+  </form>
+</div>

@@ -1,0 +1,43 @@
+<p class="text-primary">Do you want to update iteam {{data.name}} </p>
+
+
+<div class="container">
+
+  <form  (ngSubmit)="onUpdate(buketform)" #buketform="ngForm" >
+
+
+  <div fxLayout="column" class="wd100" fxLayoutAlign="space-around center">
+
+      <input  type="hidden" ngModel name="_id" [(ngModel)]="data.id" placeholder="Please Enter item id">  <!--hidden filed to bind id of item to update name, type, price-->
+      
+      
+    <mat-form-field class="wd80">
+      <input matInput type="text" ngModel name="itemName" placeholder="Please Enter Item Name">    <!--itemName-->
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select  ngModel name="itemType"  placeholder="selet item Type">  <!--itemType-->
+        <mat-option *ngFor="let item of itemtype"  [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="wd80"  >
+      <input matInput type="number" ngModel name="itemPrice" placeholder="Please Enter Item Price"> <!--itemPrice-->
+    </mat-form-field>
+  </div>
+
+    <div fxLayout="row" class="wd100" fxLayoutAlign="space-around center">
+    <button mat-raised-button color="primary" type="submit" (click)="onSubClick()">Submit</button>
+
+    <button mat-raised-button color="primary" type="reset" (click)="onNoClick()">Cancle</button>
+   </div>
+  </form>
+</div>
+  
+
+
+
+
+  
